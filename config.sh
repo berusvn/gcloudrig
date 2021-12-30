@@ -25,7 +25,7 @@ INSTANCETYPE="n1-standard-8"
 BOOTTYPE="pd-ssd"
 
 # do we make preemptible instances?
-PREEMPTIBLE="true"
+PREEMPTIBLE="false"
 
 # GCP Base Image and Family (replace these if you're using your own custom image - give it a family name and enter the Project ID)
 IMAGEBASEFAMILY="windows-2019"
@@ -50,11 +50,11 @@ GCSBUCKET=""
 
 # default setup options; these will also be selectable during ./setup.sh
 declare -A SETUPOPTIONS
-SETUPOPTIONS[ZeroTierNetwork]=""
+SETUPOPTIONS[ZeroTierNetwork]="a09acf0233f927b5"
 SETUPOPTIONS[VideoMode]="1920x1080"
 SETUPOPTIONS[DisplayScaling]=""
-SETUPOPTIONS[InstallSteam]="false"
+SETUPOPTIONS[InstallSteam]="true"
 SETUPOPTIONS[InstallBattlenet]="false"
 SETUPOPTIONS[InstallSSH]="false"
-SETUPOPTIONS[InstallGoogleChrome]="false"
+SETUPOPTIONS[InstallGoogleChrome]="true"
 SETUPOPTIONS[InstallFirefox]="false"
