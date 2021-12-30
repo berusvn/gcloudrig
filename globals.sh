@@ -431,11 +431,6 @@ function gcloudrig_create_instance_template {
   local templateName="$1" # required
   local imageFlags
   local bootImage
-  local preemptibleFlags
-
-  if [ -n "$PREEMPTIBLE" ]; then
-    preemptibleFlags="--preemptible"
-  fi
 
   bootImage=$(gcloudrig_get_bootimage)
 
@@ -467,7 +462,6 @@ function gcloudrig_create_instance_template {
       --scopes "default,compute-rw" \
       --boot-disk-auto-delete \
       --no-restart-on-failure \
-      "$preemptibleFlags" \
       --format "value(name)" \
       --metadata serial-port-logging-enable=true \
       --metadata-from-file windows-startup-script-ps1=<(cat "$DIR/gcloudrig-boot.ps1") \
